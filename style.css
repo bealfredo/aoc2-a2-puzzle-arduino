@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: o;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./wallpaperflare.com_wallpaper.jpg");
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 60px;
+  padding: 40px;
+  border-radius: 20px;
+  width: min(500px, calc(100% - 40px));
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.links a {
+  color: #333;
+  text-decoration: none;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  border: 1px solid black;
+  transition: all 0.3s;
+  te
+}
+
+.links a:hover {
+  background-color: #333;
+}
+
+
+/* Snake */
+:root{
+  --move50-size: 40px;
+  --move50-size-tail: calc( (-1 * var(--move50-size)) / 2 )
+}
+blockquote.move5 {
+  pointer-events: none;
+}
+
+.move5 section {
+  inset: 0;
+  position: absolute;
+  /* width: 500px; */
+  /* height: 300px; */
+  height: 100%;
+  margin: auto;
+}
+.move5 .snakeHead {
+  position: absolute;
+  width: var(--move50-size);
+  height: var(--move50-size);
+  background-image: linear-gradient(to right, red, blue);
+  border-radius: 10px;
+}
+.move5 .snakeHead{
+  animation: move50 4s infinite, move50-2 1s infinite;
+}
+.move5 [class^='snakeEyes']{
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 2px 0px white inset;
+}
+.move5 [class^='snakeEyes']{
+  animation: move50-3 3s infinite linear;
+}
+.move5 .snakeEyes-1{
+  right: 0px;
+}
+.move5 .snakeEyes-2{
+  bottom: 0px;
+  right: 0px
+}
+@keyframes move50 { /* moves */
+  20% {transform: translate(calc(500px - var(--move50-size)), 0px) }
+  25% {transform: translate(calc(500px - var(--move50-size)), 0px) rotateZ(90deg)}
+  45% {transform: translate(calc(500px - var(--move50-size)), calc(600px - var(--move50-size))) rotateZ(90deg)}
+  50% {transform: translate(calc(500px - var(--move50-size)), calc(600px - var(--move50-size))) rotateZ(180deg)}
+  70% {transform: translate(0px , calc(600px - var(--move50-size))) rotateZ(180deg)}
+  75% {transform: translate(0px , calc(600px - var(--move50-size))) rotateZ(270deg)}
+  95% {transform: translate(0px , 0px) rotateZ(270deg)}
+  100% {transform: translate(0px , 0px) rotateZ(360deg)}
+}
+@keyframes move50-2 { /* snake tail */
+  0% {box-shadow: 0px 0px 0px}
+  50% {box-shadow:
+                  var(--move50-size-tail) 0px 0px orange, 
+                  calc(var(--move50-size-tail) * 2) 0px 0px yellow,
+                  calc(var(--move50-size-tail) * 3) 0px 0px green,
+                  calc(var(--move50-size-tail) * 4) 0px 0px blue,
+                  calc(var(--move50-size-tail) * 5) 0px 0px violet}
+  100% {box-shadow: 0px 0px 0px}
+}
+@keyframes move50-3 { /* snakeEyesBlinking */
+  0% {box-shadow: 2px 0px white inset;}
+  25% {box-shadow: 2px 0px white inset;}
+  50% {box-shadow: 10px 0px blue inset;}
+  750% {box-shadow: 2px 0px white inset;}
+  100% {box-shadow: 2px 0px white inset;}
+}
