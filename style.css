@@ -29,6 +29,8 @@ body {
   width: min(500px, calc(100% - 40px));
   height: 600px;
   position: relative;
+  /* border: 2px solid rgba(245, 245, 245, 0.401); */
+  box-shadow: -0px 20px 40px;
 }
 
 h1 {
